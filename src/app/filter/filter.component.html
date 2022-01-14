@@ -1,0 +1,10 @@
+<mat-selection-list #item>
+  <mat-list-option *ngFor="let item of toppingList$ | async"  [selected]="item.display" (selectionChange)="toggleDisplayState(item.columnDef)">
+    {{item.columnDef}}
+  </mat-list-option>
+</mat-selection-list>
+
+<!-- <p>
+  Options selected: {{item.selectedOptions.selected.length}}
+</p> -->
+<!-- (focus)="test(evt)" -->
