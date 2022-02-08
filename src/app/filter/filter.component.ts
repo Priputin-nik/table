@@ -1,8 +1,9 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Column } from '../interfaces/column-interface';
 import { OptionsService } from '../services/options.service';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-filter',
@@ -10,26 +11,35 @@ import { OptionsService } from '../services/options.service';
   styleUrls: ['./filter.component.scss']
 })
 export class FilterComponent implements OnInit {
+ 
   public toppingList$: Observable<Column[]>;
-  public g: EventEmitter<string>;
-  public a: string = 'string';
+  public numItem$: Observable<Column[]>;
+
 
   constructor(private optionsService: OptionsService) {
-    this.toppingList$ = optionsService.allColumns$;
-    // this.toppingList = optionsService.displayColumns
-    this.g = new EventEmitter();
+    this.toppingList$ = optionsService.allColumns$.pipe(map(item => item.filter(item => item.static === false)));
+    this.numItem$ = this.toppingList$.pipe(map(item => item.filter(item => item.static === false).filter(item => item.display === true)));
   }
 
   ngOnInit() {
+
   }
 
-  toggleDisplayState(nameColumn:string):void {
-    this.a = nameColumn;
-    console.log(this.a);
-    console.log(nameColumn);
-    console.log('nameColumn');
-
+    drop(event: CdkDragDrop<string[]>) {
+      this.optionsService.moveColumns(event);
     }
 
+    showHiddenColumn(event: string): void {
+      this.optionsService.showHiddenColumn(event);
+    }
 
+    showAll(){
+      this.optionsService.showAllColumns();
+    }
+
+    countLengthDisplayList():number {
+      return this.optionsService.countLengthDisplayList()
+      
+    }
+    
 }

@@ -1,2 +1,12 @@
-<app-filter></app-filter>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <app-filter></app-filter>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon [ngClass]="{hidden: drawer.opened}">keyboard_arrow_right</mat-icon>
+      <mat-icon [ngClass]="{hidden: !drawer.opened}">keyboard_arrow_left</mat-icon>
+    </button>
+  </div>
+</mat-drawer-container>
 <app-table></app-table>

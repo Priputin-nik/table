@@ -26,6 +26,11 @@ export const ALL_COLUMNS: Column[] = [{
       display: true,
     },
     {
+      columnDef: 'availability',
+      static: true,
+      display: true,
+    },
+    {
       columnDef: 'price',
       static: false,
       display: true,
@@ -37,11 +42,6 @@ export const ALL_COLUMNS: Column[] = [{
     },
     {
       columnDef: 'date',
-      static: false,
-      display: true,
-    },
-    {
-      columnDef: 'availability',
       static: false,
       display: true,
     }

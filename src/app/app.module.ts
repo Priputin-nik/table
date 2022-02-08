@@ -10,13 +10,18 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FilterComponent } from './filter/filter.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { ENVIRONMENTS_PROVIDERS } from 'src/environments/environment-providers';
 
 @NgModule({
   declarations: [	
     AppComponent,
     TableComponent,
-      FilterComponent
+    FilterComponent
    ],
   imports: [
     BrowserModule,
@@ -26,9 +31,13 @@ import {MatListModule} from '@angular/material/list';
     MatCheckboxModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatListModule
+    MatListModule,
+    DragDropModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [...ENVIRONMENTS_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

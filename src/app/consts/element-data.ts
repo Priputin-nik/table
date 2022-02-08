@@ -1,11 +1,10 @@
 import { PeriodicElement } from "../interfaces/table-content";
 
 export const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', id: 10079, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
-  {position: 2, name: 'Hydrogen', id: 10079, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
-  {position: 3, name: 'Hydrogen', id: 10079, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
-  {position: 4, name: 'Hydrogen', id: 10079, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
-  {position: 5, name: 'Hydrogen', id: 10079, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
-  {position: 7, name: 'Hydrogen', id: 10079, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
-  
+  {selected: false, name: 'Hydrogen', id: 10079, photo: '/assets/img1.jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
+  {selected: false, name: 'Hydrogen', id: 10080, photo: '/assets/img2.jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
+  {selected: false, name: 'Hydrogen', id: 10081, photo: '/assets/img3.jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
+  {selected: false, name: 'Hydrogen', id: 10082, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
+  {selected: false, name: 'Hydrogen', id: 10083, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
+  {selected: false, name: 'Hydrogen', id: 10084, photo: '...jpeg', brand: 'sumsung', price: 123, oldPrice: 199, date: '12-11-2021', availability: true},
 ];

@@ -1,6 +1,6 @@
 export interface PeriodicElement {
   name: string;
-  position: number;
+  selected: boolean;
   id: number;
   photo: string;
   brand: string;

@@ -68,6 +68,14 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "demo": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment-providers.ts",
+                  "with": "src/environments/environment-providers.demo.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"

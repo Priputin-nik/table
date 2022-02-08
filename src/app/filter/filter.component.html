@@ -1,10 +1,10 @@
-<mat-selection-list #item>
-  <mat-list-option *ngFor="let item of toppingList$ | async"  [selected]="item.display" (selectionChange)="toggleDisplayState(item.columnDef)">
+<mat-selection-list #item cdkDropList (cdkDropListDropped)="drop($event)">
+  <mat-list-option *ngFor="let item of toppingList$ | async" [disabled]="item.display && (numItem$ | async)?.length === 1"
+  [selected]="item.display" (click)="showHiddenColumn(item.columnDef)" cdkDrag>
     {{item.columnDef}}
+  </mat-list-option>
+  <mat-list-option class="selection-all" (click)="showAll()" [selected]="((numItem$ | async)?.length  === 7)">
+    Выбрать все
   </mat-list-option>
 </mat-selection-list>
 
-<!-- <p>
-  Options selected: {{item.selectedOptions.selected.length}}
-</p> -->
-<!-- (focus)="test(evt)" -->
